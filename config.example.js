@@ -27,6 +27,10 @@ config = {
         server: {
             host: '0.0.0.0',
             port: '2368'
+        },
+
+        paths: {
+            contentPath: path.join(process.env.GHOST_CONTENT, '/')
         }
     },
 
