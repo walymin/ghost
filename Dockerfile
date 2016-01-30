@@ -37,7 +37,7 @@ RUN buildDeps=' \
 	&& rm -rf ./myghost-master \
 	#&& npm install --production \
 	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
-	&& rm ghost.zip \
+	&& rm ghost.zip 
 	#&& npm cache clean \
 	#&& rm -rf /tmp/npm*
 
