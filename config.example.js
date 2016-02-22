@@ -29,9 +29,9 @@ config = {
             port: '2368'
         },
 
-        paths: {
-            contentPath: path.join(process.env.GHOST_CONTENT, '/')
-        }
+        //paths: {
+        //    contentPath: path.join(process.env.GHOST_CONTENT, '/')
+        //}
     },
 
     // ### Development **(default)**
