@@ -59,4 +59,4 @@ COPY config.example.js /usr/src/ghost/
 EXPOSE 2368
 	#cd /
 #RUN npm start --production
-#CMD ["/start.sh"]
+CMD ["/start.sh"]
