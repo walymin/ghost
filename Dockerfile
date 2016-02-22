@@ -48,7 +48,7 @@ RUN buildDeps=' \
 
 #COPY docker-entrypoint.sh /entrypoint.sh
 
-#COPY start.sh /start.sh
+COPY start.sh /start.sh
 
 RUN rm -rf /usr/src/ghost/config.js /usr/src/ghost/config.example.js
 
@@ -57,6 +57,6 @@ COPY config.example.js /usr/src/ghost/
 #RUN chmod a+x /start.sh
 
 EXPOSE 2368
-cd /
-RUN npm start --production
+	#cd /
+#RUN npm start --production
 #CMD ["/start.sh"]
