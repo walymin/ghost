@@ -57,5 +57,6 @@ COPY config.example.js /usr/src/ghost/
 #RUN chmod a+x /start.sh
 
 EXPOSE 2368
-CMD npm start --production
+cd /
+RUN npm start --production
 #CMD ["/start.sh"]
