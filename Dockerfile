@@ -42,11 +42,11 @@ RUN buildDeps=' \
 	#&& npm cache clean \
 	#&& rm -rf /tmp/npm*
 
-#ENV GHOST_CONTENT /var/ghost
-#RUN mkdir -p "$GHOST_CONTENT" && chown -R user:user "$GHOST_CONTENT"
-#VOLUME $GHOST_CONTENT
+ENV GHOST_CONTENT /var/ghost
+RUN mkdir -p "$GHOST_CONTENT" && chown -R user:user "$GHOST_CONTENT"
+VOLUME $GHOST_CONTENT
 
-#COPY docker-entrypoint.sh /entrypoint.sh
+COPY docker-entrypoint.sh /entrypoint.sh
 
 COPY start.sh /start.sh
 
@@ -54,9 +54,7 @@ RUN rm -rf /usr/src/ghost/config.js /usr/src/ghost/config.example.js
 
 COPY config.example.js /usr/src/ghost/
 
-#RUN chmod a+x /start.sh
+RUN chmod a+x /start.sh
 
-WORKDIR /
 EXPOSE 2368
-CMD  ["npm","start","--production"]
-#CMD ["/start.sh"]
+CMD ["/start.sh"]
