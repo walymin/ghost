@@ -46,7 +46,7 @@ RUN buildDeps=' \
 #RUN mkdir -p "$GHOST_CONTENT" && chown -R user:user "$GHOST_CONTENT"
 #VOLUME $GHOST_CONTENT
 
-COPY docker-entrypoint.sh /entrypoint.sh
+#COPY docker-entrypoint.sh /entrypoint.sh
 
 COPY start.sh /start.sh
 
@@ -58,5 +58,5 @@ COPY config.example.js /usr/src/ghost/
 
 WORKDIR /
 EXPOSE 2368
-RUN  npm start --production
+CMD  ["npm","start","--production"]
 #CMD ["/start.sh"]
