@@ -1,5 +1,5 @@
 #!/bin/bash
 
-#/entrypoint.sh
+/entrypoint.sh
 
 npm start --production
