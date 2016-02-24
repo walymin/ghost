@@ -32,15 +32,13 @@ RUN buildDeps=' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	#&& curl -sSL "https://ghost.org/archives/ghost-${GHOST_VERSION}.zip" -o ghost.zip \
-	&& curl -sSL "https://github.com/CareyToboo/myghost/archive/master.zip" -o ghost.zip \
+	&& curl -sSL "https://github.com/toboos/ghost-zh.git" -o ghost.zip \
 	&& unzip ghost.zip \
-	&& mv ./myghost-master/* ./ \
-	&& rm -rf ./myghost-master \
-	#&& npm install --production \
+	&& npm install --production \
 	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
-	&& rm -rf ghost.zip 
-	#&& npm cache clean \
-	#&& rm -rf /tmp/npm*
+	&& rm -rf ghost.zip \
+	&& npm cache clean \
+	&& rm -rf /tmp/npm* 
 
 ENV GHOST_CONTENT /var/ghost
 RUN mkdir -p "$GHOST_CONTENT" && chown -R user:user "$GHOST_CONTENT"
