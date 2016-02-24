@@ -11,7 +11,7 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://bigming.daoapp.io',
+        url: 'http://ghostcourse.daoapp.io',
         mail: {},
         database: {
             client: 'mysql',
@@ -29,9 +29,9 @@ config = {
             port: '2368'
         },
 
-        //paths: {
-        //    contentPath: path.join(process.env.GHOST_CONTENT, '/')
-        //}
+        paths: {
+            contentPath: path.join(process.env.GHOST_CONTENT, '/')
+        }
     },
 
     // ### Development **(default)**
