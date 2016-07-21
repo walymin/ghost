@@ -1,7 +1,7 @@
 FROM node:4.2-slim
 
 RUN groupadd user && useradd --create-home --home-dir /home/user -g user user
-
+  
 RUN set -x \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends curl ca-certificates \
