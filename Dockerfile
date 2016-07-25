@@ -32,7 +32,7 @@ RUN buildDeps=' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	#&& curl -sSL "https://ghost.org/archives/ghost-${GHOST_VERSION}.zip" -o ghost.zip \
-	&& curl -sSL ORIGIN_SOURCE -o ghost.zip \
+	&& curl -sSL "https://github.com/walymin/myghost/archive/master.zip" -o ghost.zip \
 	&& unzip ghost.zip \
 	&& mv ./myghost-master/* ./ \
 	&& rm -rf ./myghost-master \
