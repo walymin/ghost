@@ -20,7 +20,7 @@ RUN arch="$(dpkg --print-architecture)" \
 ENV GHOST_SOURCE /usr/src/ghost
 ENV ORIGIN_SOURCE https://github.com/walymin/myghost/archive/master.zip
 WORKDIR $GHOST_SOURCE
-
+   
 #ENV GHOST_VERSION 0.7.2
   
 RUN buildDeps=' \
